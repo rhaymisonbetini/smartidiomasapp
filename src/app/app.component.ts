@@ -22,8 +22,8 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
 
-      const token = localStorage.getItem("incidente_token");
-      const user = localStorage.getItem("email");
+      const token = sessionStorage.getItem("token");
+      const user = sessionStorage.getItem("email");
 
       if (token && user) {
 

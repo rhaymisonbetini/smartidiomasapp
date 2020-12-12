@@ -1,35 +1,47 @@
 <ion-content class="ion-padding">
 
-  <ion-grid>
-    <ion-row>
-      <ion-col id="learning" size="12">
-        <div class="flag">
-          <img src="../../assets/img/logo.png" alt="">
-        </div>
-      </ion-col>
+  <form [formGroup]="loginform">
+    <ion-grid>
+      <ion-row>
+        <ion-col id="learning" size="12">
+          <div class="flag">
+            <img src="../../assets/img/logo.png" alt="">
+          </div>
+        </ion-col>
 
-      <ion-col size="12">
-        <ion-item>
-          <ion-input type="email" placeholder="Entre com seu email">
-          </ion-input>
-        </ion-item>
-      </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-input formControlName="email" type="email" placeholder="Entre com seu email">
+            </ion-input>
+          </ion-item>
+        </ion-col>
 
-      <ion-col size="12">
-        <ion-item>
-          <ion-input type="password" placeholder="Entre com sua senha">
-          </ion-input>
-        </ion-item>
-      </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-input formControlName="password" type="password" placeholder="Entre com sua senha">
+            </ion-input>
+          </ion-item>
+        </ion-col>
 
+        <ion-col size="12">
+          <ion-item>
+            <ion-label>Idioma</ion-label>
+            <ion-select formControlName="lang">
+              <ion-select-option value="ENG">Inglês</ion-select-option>
+              <ion-select-option value="ESP">Espanhol</ion-select-option>
+              <ion-select-option value="FRAN">Frances</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
 
-      <ion-col size="12">
-        <ion-button expand="full" color="tertiary">
-          Login
-        </ion-button>
-      </ion-col>
+        <ion-col size="12">
+          <ion-button expand="full" color="tertiary" [disabled]="loginform.invalid" (click)="login()">
+            Login
+          </ion-button>
+        </ion-col>
 
-    </ion-row>
-  </ion-grid>
+      </ion-row>
+    </ion-grid>
+  </form>
 
 </ion-content>
