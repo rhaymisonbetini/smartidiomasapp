@@ -1,0 +1,24 @@
+ion-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+
+    ion-col{
+        margin: 20px 0 ;
+    }
+
+    #learning {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    
+}
+
+

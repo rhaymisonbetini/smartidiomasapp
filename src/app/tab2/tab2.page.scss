@@ -1,0 +1,15 @@
+ion-list {
+    background: unset !important;
+
+    ion-list-header{
+        text-align: center;
+        justify-content: center;
+        color: var(--ion-color-tertiary);
+    }
+
+    ion-item {
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        border-radius: 8px !important;
+    }
+}
