@@ -1,24 +1,37 @@
-ion-grid {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 80vh;
+#blocote {
 
-    ion-col{
-        margin: 20px 0 ;
-    }
+    background: whitesmoke;
+    padding: 10px;
+    border-radius: 30px;
 
-    #learning {
-        width: 100%;
+    ion-grid {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    
+        width: 100%;
+        height: 80vh;
+
+        ion-col {
+            margin: 10px 0;
+        }
+
+        #learning {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .last-column{
+            margin-bottom: 50px;
+        }
     }
-    
 }
 
-
+.author{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
