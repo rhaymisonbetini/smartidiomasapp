@@ -51,7 +51,7 @@ export class LoginPage implements OnInit {
 
     }, error => {
 
-      console.log(error)
+      alert(JSON.stringify(error))
       this.loadingProvider.loadingDismiss()
 
       if (error.status == 404) {

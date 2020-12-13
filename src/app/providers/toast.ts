@@ -19,7 +19,7 @@ export class ToastProvider {
     async erroToast(message: string) {
         const toast = await this.toastController.create({
             message: message,
-            position: 'bottom',
+            position: 'top',
             color: 'danger',
             duration: 5000
         });
@@ -29,7 +29,7 @@ export class ToastProvider {
     async successToast(message: string) {
         const toast = await this.toastController.create({
             message: message,
-            position: 'bottom',
+            position: 'top',
             color: 'success',
             duration: 4000
         });
@@ -39,7 +39,7 @@ export class ToastProvider {
     async presentToastWithOptions(message, route) {
         const toast = await this.toastController.create({
             message: message,
-            position: 'bottom',
+            position: 'top',
             color: 'success',
         });
         toast.present();

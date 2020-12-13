@@ -1,5 +1,7 @@
 {
   "name": "smartidiomasapp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

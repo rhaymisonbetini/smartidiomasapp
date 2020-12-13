@@ -35,14 +35,17 @@
         </div>
       </ion-col>
       <ion-col size="12">
-        <ion-button expand="full">
+        <ion-button expand="full" [disabled]="!currntQuestion" (click)="hear()">
           Ouvir
         </ion-button>
       </ion-col>
       <ion-col size="12">
-        <ion-button expand="full" color="tertiary">
+        <ion-button expand="full" color="tertiary"[disabled]="!currntQuestion" (click)="speak()">
           Pronunciar
         </ion-button>
+      </ion-col>
+      <ion-col size="12">
+        <p class="current">{{currntQuestion}}</p>
       </ion-col>
     </ion-row>
   </ion-grid>
