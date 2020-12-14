@@ -58,8 +58,13 @@ export class Tab1Page implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.setTtsLang();
-    this.findQuestions()
+
+    if (!sessionStorage.getItem('token') && !sessionStorage.getItem('name')) {
+      return;
+    } else {
+      this.setTtsLang();
+      this.findQuestions()
+    }
   }
 
 
@@ -114,11 +119,13 @@ export class Tab1Page implements OnInit {
     this.speechRec.startListening(options).subscribe(matches => {
       let speaker = matches[0];
 
-      if (speaker.toLocaleLowerCase() == this.currntQuestion
-        .replace(',', ' ')
-        .replace('!', ' ')
-        .replace('?', ' ')
-        .replace('.', ' ').toLocaleLowerCase()) {
+      let current = this.currntQuestion
+        .replace(',', '')
+        .replace('!', '')
+        .replace('?', '')
+        .replace('.', '').toLocaleLowerCase()
+
+      if (speaker.toLocaleLowerCase() == current) {
 
         this.ngZone.run(() => {
           this.score = this.score + this.currentQuestionPoint;
@@ -127,7 +134,7 @@ export class Tab1Page implements OnInit {
           this.updateUserPoints(this.currentQuestionPoint)
         })
       } else {
-        this.alertProvider.erroAlert('Ops! Você errou,tente novamente...')
+        this.toastProvider.erroToast('Ops! Você errou,tente novamente...')
       }
 
     })
